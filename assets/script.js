@@ -56,6 +56,8 @@ function askQuestion(){
   option3.innerHTML = q.option3;
 }
 
+start.addEventListener("click",startQuiz)
+
 // function to start quiz
 
 function startQuiz() {
