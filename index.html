@@ -16,7 +16,7 @@
         Want to test your coding mettle? Just say "quiz me"! Don't forget that the timer is counting down! Beware: incorrect questions will <strong>subtract</strong> time from your clock!
     </p>
     <br/>
-    <p id="container">
+    <p id="questionsDiv">
         <!--timer first--if it's in a prominent place then it's easy to see-->
         <div id="timer">
             <div id="clock"></div>
@@ -24,15 +24,15 @@
         </div>
 
         <!--where the questions will populate-->
-        <div id="question"></div>
+        <div id="currentquestion"></div>
         <div id="options">
             <div class="option" id="One"></div>
             <div class="option" id="Two"></div>
             <div class="option" id="Three"></div>
-        </div>
-        <!--buttons for the user to clicky-click.-->
-        <button id="startnow">Get ready! Get set! Quiz!</button>
-    </p>
+        </div>    
+    </p> 
+    <!--buttons for the user to clicky-click.-->
+    <button id="startnow">Get ready! Get set! Start quiz!</button>
     <script src="./assets/script.js"></script>
 </body>
 <footer>
