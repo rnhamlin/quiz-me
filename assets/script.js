@@ -5,11 +5,12 @@ const option1 = document.getElementById("One");
 const option2 = document.getElementById("Two");
 const option3 = document.getElementById("Three");
 let currentTime=document.querySelector("#currentTime");
-let questionSection = document.querySelector("#questionsDiv")
-let currentQuestion = document.getElementById("currentquestion")
+let questionSection = document.querySelector("#questionsDiv");
+let currentQuestion = document.getElementById("currentquestion");
+var submitArea = document.querySelector("#submit-area");
 
 
-// questions for the quiz
+// questions for the quiz; an array with 1 question per indice
 
 let question = [
   {
@@ -68,11 +69,15 @@ function startQuiz() {
   countdown();
 }
 
+
+
+
 // function to show progress
 function tick() {
         secondsLeft--;
       currentTime.textContent = "Time: " + secondsLeft;
 
+      // countdown is over
       if (secondsLeft <= 0) {
         clearInterval(holdInterval);
         allDone();
@@ -85,17 +90,34 @@ function tick() {
 function countdown() {
   var clock = setInterval(tick, 1000);
 };
+// time calculations for minutes and seconds
+var minutes = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+// function to submit answer to quiz
+var submitBtn = function(event) {
+  console.log(event.target);
+};
+
+//btn?
+//  if (event.target.matches(".submitbtn")) {
+//  var submitAnswer = event.target.
+// }};
+
+// display the result in an element with id="clock"
+
+document.getElementById("clock").innerHTML = minutes + "min" + seconds + "sec";
 
 // display the user's answers
 
 // what if the answer is right?
 
 // what if the answer is wrong?
+// need function to subtract time from the timer for wrong answers (idk like 10 seconds?)
 
 
 // event listeners go at the bottom
 //need second event listener for submit answer button, which connects to countdown/tick
 
 startnow.addEventListener("click",startQuiz)
-
+  console.log(event.target)
