@@ -5,17 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Me!</title>
-    <link rel="stylesheet" href=".assets/style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
     <h2>
         Quiz Me!
     </h2>
-    
+    <br/>
     <p>
-        Want to test your coding mettle? Just say "quiz me"! Don't forget that the timer is counting down! Beware: incorrect questions will <strong>subtract</strong> time from your clock!
+        Want to test your coding mettle? Just say "quiz me"! Click on the answer you think is correct. Don't forget that the timer is counting down! 
     </p>
     <br/>
+    <p>
+        Beware: incorrect questions will <strong>subtract</strong> time from your clock!
+    </p>
+    <br/>
+    <main>
     <p id="questionsDiv">
         <!--timer first--if it's in a prominent place then it's easy to see-->
         <div id="timer">
@@ -25,6 +30,7 @@
 
         <!--where the questions will populate-->
         <div id="currentquestion"></div>
+        <br/>
         <div id="options">
             <div class="option" id="One"></div>
             <div class="option" id="Two"></div>
@@ -35,6 +41,7 @@
     <button id="startnow">Get ready! Get set! Start quiz!</button>
     <div class="submit-area" id="submit-area"></div>
     <script src="./assets/script.js"></script>
+    </main>
 </body>
 <footer>
     <!--view high scores link-->
