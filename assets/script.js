@@ -67,33 +67,35 @@ function startQuiz() {
   // countdown();
 }
 
-// function to show progress
-function tick() {
-  secondsLeft--;
-  currentTime.textContent = "Time: " + secondsLeft;
-
-  // countdown is over
-  if (secondsLeft <= 0) {
-    clearInterval(holdInterval);
-    allDone();
-    currentTime.textContent = "Time's Up! Game over!";
-  }
-}
-
 // timer/countdown function, I think
 function countdown() {
-  var clock = setInterval(tick, 1000);
+  var timer = setInterval(tick, 1000);
+
+  // function to show progress
+  function tick() {
+    countdown = setInterval(timer);
+    currentTime.textContent = "Time: " + secondsLeft;
+
+    // countdown is over
+    if (secondsLeft <= 0) {
+      clearInterval(holdInterval);
+      allDone();
+      currentTime.textContent = "Time's Up! Game over!";
+    }
+  }
 }
 // time calculations for minutes and seconds
 //var minutes = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 //var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 // function to submit answer to quiz
+// what if the answer is right?
+// what if the answer is wrong?
 var checkAnswer = function (event) {
   console.log(event.target);
   if (event.target.matches(".option")) {
     //console.log(question[questionIndex].correct, event.target.textContent);
-    if (question[questionIndex].correct === event.target.textConent) {
+    if (question[questionIndex].correct === event.target.textContent[4]) {
       console.log("correct");
     } else {
       console.log("not correct");
@@ -108,15 +110,12 @@ var checkAnswer = function (event) {
 
 //document.getElementById("clock").innerHTML = minutes + "min" + seconds + "sec";
 
-// display the user's answers
-
-// what if the answer is right?
-
-// what if the answer is wrong?
 // need function to subtract time from the timer for wrong answers (idk like 10 seconds?)
 
 // event listeners go at the bottom
 //need second event listener for submit answer button, which connects to countdown/tick
+
+//Store the high scores in local storage, display them from local storage via "View High Scores" button
 
 startnow.addEventListener("click", startQuiz);
 selectAnswer.addEventListener("click", checkAnswer);
